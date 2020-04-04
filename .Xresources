@@ -1,0 +1,83 @@
+! ***** flat color scheme ***** !
+
+#define red #d63031
+#define green #00b894
+#define blue #0984e3
+#define yellow #fdcb6e
+#define pink #e84393
+#define purple #6c5ce7
+#define orange #e17055
+#define cyan #00cec9
+#define black #1c2325
+#define gray0 #636e72
+#define gray1 #b2bec3
+#define white #efefef
+#define white1 #bdc4c7
+#define lightyellow #ffeaa7
+#define lightgreen #55efc4
+#define lightred #ff7675
+#define lightblue #74b9ff
+#define lightpink #fd79a8
+#define lightpurple #a29bfe
+#define lightorange #fab1a0
+#define lightcyan #81ecec
+
+
+! ***** xst config ***** !
+
+! Termname
+st*termname:            xterm-256color
+! Shell
+st*shell:               /bin/zsh
+! Font
+st*font:                Hasklig Medium:pixelsize=11:antialias=true:autohint=true
+! Bold
+st*bold_font:           1
+! Border
+st*borderpx:            10
+! Fps
+st*xfps:		360
+st*actionfps:		240
+! Line Space
+st*chscale: 		1.12
+! Cursor shape
+st*cursorshape:		3
+
+st*opacity:		252
+! ***** HiDPI config ***** !
+!Xft.dpi: 118
+
+! ***** color config ***** !
+
+! background
+*background:		black
+*foreground:		white
+
+! black dark/light
+*color0:                black
+*color8:                grey0
+! red dark/light
+*color1:                red
+*color9:                orange
+! green dark/light
+*color2:                green
+*color10:               lightgreen
+! yellow dark/light
+*color3:                yellow
+*color11:               lightyellow
+! blue dark/light
+*color4:                blue
+*color12:               lightblue
+! magenta dark/light
+*color5:                purple
+*color13:               lightpurple
+! cyan dark/light
+*color6:                cyan
+*color14:               lightcyan
+! white dark/light
+*color7:                white1
+*color15:               white
+
+! ***** rofi config ***** !
+
+rofi.font:              Hasklig 13

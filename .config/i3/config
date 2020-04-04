@@ -1,0 +1,225 @@
+#
+#  i3 config file
+#  Talebian (@ArchitettoLinux)
+#  Github: https://github.com/Talebian12
+#
+
+# Start lockscreen
+# exec --no-startup-id betterlockscreen -l dimblur
+
+# Set mod key -> Alt - Cmd
+set $mod Mod1
+
+# Set i3 font
+font pango:hasklig 10
+
+# Floating modifier, if you press mod key you can drag windows with mouse
+floating_modifier $mod
+
+# Set qt5ct environment variable to config qt5 theme
+exec_always export QT_QPA_PLATFORMTHEME=qt5ct
+
+
+# Exec xst terminal with tmux
+bindsym $mod+Return exec konsole
+
+
+# Kill window
+bindsym $mod+Shift+q kill
+
+
+#
+# Rofi control menu
+#
+bindsym $mod+d exec --no-startup-id appsmenu             #  Rofi app menu
+
+#
+# Scrot
+#
+bindsym Print exec --no-startup-id sh -c 'scrot /home/talebian/images/screenshots/"$(date)"_screen.jpg'		# Screenshot
+bindsym $mod+Print exec --no-startup-id sh -c 'scrot -s /home/talebian/images/screenshots/"$(date)"_area.jpg'	# Selection
+
+#
+# Pulseaudio control keybinds
+#
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%   #  Increase volume by 2%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%   #  Decrease volume by 2%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         #  Set audio source mute keybind 1
+bindsym $mod+XF86AudioPlay exec --no-startup-id pactl set-sink-mute 0 toggle    #  Set audio source mute keybind 2
+
+
+#
+# mpd control keybinds
+#
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle   #  Play/Pause current track
+bindsym XF86AudioNext exec --no-startup-id mpc next     #  Next track
+bindsym XF86AudioPrev exec --no-startup-id mpc prev     #  Previous track
+
+
+#
+# windows aspect settings
+#
+for_window [class=".*"] border pixel 3                    #  set window borders at 0
+for_window [class="tmux-256color"] floating enable        #  set terminal floating when is opened    
+
+#
+# Only i3 gaps rounded
+#
+
+# gaps inner 4                                            #  inner gaps
+# gaps outer 2                                            #  outer gaps
+# border_radius 2                                         #  window corner radius
+
+
+#
+# auto startup softwares
+#
+exec_always --no-startup-id dunst                                                               #  start dunst notification service
+exec_always --no-startup-id /home/talebian/.config/i3/mpd.sh                                    #  start mpd music server
+exec_always --no-startup-id /home/talebian/.config/polybar/launch.sh                            #  start polybar system bar
+exec_always --no-startup-id picom                                                             	#  start picom compositor
+exec_always --no-startup-id feh --bg-scale /home/talebian/images/Wallpapers/flat-dark.png       #  set background
+exec_always --no-startup-id setxkbmap it                                                        #  set kb layout
+exec_always --no-startup-id xrdb -merge ~/.Xresources                                           #  merge .Xresource theme settings
+exec_always --no-startup-id networkd-notify                                                     #  start networkd notify system
+
+#
+# GNOME i3 config
+#
+
+# exec_always --no-startup-id gnome-power-manager
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id gnome-flashback
+
+
+#
+# change focused window
+#
+
+# With letter keys
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# With arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+
+#
+# Move windows
+#
+
+# With letter keys
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# With arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+# Select split position
+bindsym $mod+h split h    # Vertical
+bindsym $mod+v split v    # Horizontal
+
+
+# Toggle fullscreen window mode
+bindsym $mod+f fullscreen toggle
+
+
+# Modes toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+
+# Set workspaces name
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+#
+# Set workspaces keybinds
+#
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+#
+# Move window to workspace
+#
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+
+# Reload config file
+bindsym $mod+Shift+c reload
+
+# Reload i3
+bindsym $mod+Shift+r restart
+
+
+#
+# Resize mode
+#
+mode "resize" {
+       
+       
+        #
+        #  resize by 10px
+        #
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        
+        #
+        #  resize by 5px
+        #
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        
+        #
+        #  return to default mode
+        #
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+# enter in resize mode
+bindsym $mod+r mode "resize"

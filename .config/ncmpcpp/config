@@ -1,0 +1,61 @@
+
+ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.ncmpcpp/lyrics
+
+##### connection settings #####
+
+mpd_host = localhost
+
+mpd_port = 6600
+
+mpd_connection_timeout = 5
+
+mpd_music_dir = ~/Musica/
+
+mpd_crossfade_time = 5
+
+audio_output {
+       type            "fifo"
+       name            "Visualizer feed"
+       path            "/tmp/mpd.fifo"
+       format          "44100:16:2"
+}
+
+
+[statusbar]
+progressbar_look = "─╼ "
+progressbar_color = "black"
+statusbar_visibility = "no"
+statusbar_color = "default"
+song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
+
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_in_stereo = "no"
+visualizer_type = "wave"
+visualizer_output_name = "my_fifo"
+visualizer_look = "●●"
+visualizer_color = "3"
+
+[playlist]
+playlist_display_mode = "classic"
+song_list_format = "{{%a - %t}|{%f}}{$R%l}"
+now_playing_prefix = "$b$2"
+now_playing_suffix = "$/b$9"
+
+[library]
+song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+empty_tag_color = "black"
+
+[global]
+colors_enabled = "yes"
+main_window_color = "default"
+centered_cursor = "yes"
+enable_window_title = "yes"
+external_editor = "nvim"
+user_interface = "alternative"
+
+[header]
+header_visibility = "yes"
+header_window_color = "default"
+volume_color = "default"
+state_line_color = "black"

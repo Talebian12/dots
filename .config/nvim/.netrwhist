@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/talebian/.config/rofi/themes/shared'
+let g:netrw_dirhist_2='/home/talebian/.config/rofi/scripts'
+let g:netrw_dirhist_1='/home/talebian/ramdisk/src/build/config/gcc'
+let g:netrw_dirhist_0='/home/talebian/.config/rofi/scripts'
+let g:netrw_dirhist_9='/home/talebian'
+let g:netrw_dirhist_8='/home/talebian/.config/rofi/themes/shared'
+let g:netrw_dirhist_7='/home/talebian/.config/rofi/themes'
+let g:netrw_dirhist_6='/home/talebian/.config/i3'
+let g:netrw_dirhist_5='/home/talebian/.config/polybar'
+let g:netrw_dirhist_4='/etc/mkinitcpio.d'

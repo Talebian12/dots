@@ -1,0 +1,40 @@
+* {
+  /* General */
+  text-font:                            "JetBrains Mono 12";
+  text-font-mono:                       "JetBrains Mono 12";
+  icon-font:                            "Hurmit Nerd Font Mono 40";
+  icon-font-small:                      "Hurmit Nerd Font Mono 14";
+  inputbar-margin:                      4px 4px;
+  prompt-padding:                       12px 14px;
+  entry-padding:                        14px 12px 12px 0px;
+  /* list menus: appsmenu, networkmenu and nmvpnmenu */
+  list-element-padding:                 14px;
+  list-element-margin:                  @inputbar-margin;
+  list-element-border:                  0px 0px 0px 6px;
+  list-8-window-padding:                38px 65px;
+  /* option menus: i3layoutmenu, mpdmenu, powermenu and scrotmenu */
+  /**
+   * Values bellow are 'no-padding' ones for a size 60 (@icon-font) font, played around using this character: ■
+   * We then add add 100 actual padding around the icons.
+   *                                    -12px 0px   -19px -96px */
+  option-element-padding:               12px 0px 19px 26px;
+  option-3-window-padding:              55px 96px;
+  option-3-listview-spacing:            90px;
+  option-5-window-padding:              115px 63px;
+  option-5-listview-spacing:            77px;
+  option-6-listview-spacing:            60px;
+  /* appsmenu */
+  apps-textbox-prompt-colon-padding:    10px;
+  /* mpdmenu */
+  mpd-window-padding:                   379px 111px;
+  mpd-inputbar-margin:                  10px 0px;
+  mpd-prompt-padding:                   14px 20px 10px 20px;
+  mpd-prompt-margin:                    0px 0px 0px -2px;
+  mpd-element-border:                   12px;
+  /* Every @option-element-padding minus @mpd-element-border */
+  mpd-element-padding:                  76px 88px 69px -16px;
+  /* networkmenu */
+  network-textbox-prompt-colon-padding: 14px 10px 10px 10px;
+  /* nmvpnmenu */
+  nmvpn-textbox-prompt-colon-padding:   @network-textbox-prompt-colon-padding;
+}
